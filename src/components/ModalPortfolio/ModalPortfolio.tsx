@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch, RootStateOrAny } from "react-redux";
-import { closePortfolio } from "../../actions/modal";
+import { closePortfolio } from "../../legacy-redux/actions/modal";
 
 const ModalPortfolio = () => {
   const projectdata = useSelector((state: RootStateOrAny) => state.data);

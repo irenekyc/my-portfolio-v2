@@ -8,7 +8,7 @@ import Hero from "./components/Hero/Hero";
 import Featured from "./components/Featured";
 import Modal from "./layout/Modal";
 import FilterBar from "./components/FilterBar";
-import PortfolioMain from "./components/PortfolioMain";
+import PortfolioMain from "./components/PortfolioMain/PortfolioMain";
 import Pagination from "./components/Pagination";
 import Footer from "./components/Footer";
 
