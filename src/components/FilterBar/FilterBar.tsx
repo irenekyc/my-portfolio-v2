@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useSelector, useDispatch, RootStateOrAny } from "react-redux";
-import { fetchData } from "../../actions/data";
+import { fetchData } from "../../legacy-redux/actions/data";
 
 const FilterBar = () => {
   const dispatch = useDispatch();
