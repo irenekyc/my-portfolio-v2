@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from "react";
 import IKModal from "../../layout/Modal";
 import { Project } from "../../typings/Project";
+import Modal from "react-bootstrap/Modal";
+import styles from "./ModalPortfolio.module.scss";
 
 interface ModalPortfolioProps {
   show: boolean;
@@ -15,54 +17,57 @@ const ModalPortfolio: FunctionComponent<ModalPortfolioProps> = ({
 }: ModalPortfolioProps) => {
   if (!projectDetails) return <></>;
   return (
-    <IKModal show={show} onHide={clickClose}>
-      <h1>{projectDetails.title}</h1>
+    <IKModal
+      show={show}
+      onHide={clickClose}
+      dialogClassName={styles.ikModal__dialog}
+      contentClassName={styles.ikModal__content}
+      size="xl"
+    >
+      <Modal.Header
+        closeButton
+        bsPrefix={styles.ikModal__header}
+        closeVariant="white"
+      >
+        <h2 className={styles.ikModal__title}>{projectDetails.title}</h2>{" "}
+      </Modal.Header>
+      <Modal.Body>
+        <div className={styles.ikModal__image}>
+          <img
+            src={`images/${projectDetails.image}`}
+            alt={projectDetails.title}
+          />
+        </div>
+        <div className={styles.ikModal__descriptions}>
+          <p>{projectDetails.excerpt}</p>
+          <p>{projectDetails.fullDescription}</p>
+        </div>
+        <div className={styles.ikModal__tools}>
+          <h4> Tools & Libraries </h4>
+
+          <p>{projectDetails.tools.join(", ")}</p>
+        </div>
+        <div className="links">
+          <a
+            className={styles.ikModal__button}
+            href={projectDetails.projectUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {" "}
+            <i className="fas fa-globe"></i> - Live Site
+          </a>
+          <a
+            className={styles.ikModal__button}
+            href={projectDetails.github}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <i className="fab fa-github"></i> - Code
+          </a>
+        </div>
+      </Modal.Body>
     </IKModal>
-    // projectdata !== null &&
-    // projectdata.projectDetails !== null && (
-    //   <div className="portfolio-modal">
-    //     <div className="portfolio-details">
-    //       <div id="close-portfolio">
-    //         {" "}
-    //         <span onClick={() => dispatch(closePortfolio())}>X </span>
-    //       </div>
-    //       <div className="portfolio-details-title">
-    //         <h1>{projectdata.projectDetails.title}</h1>
-    //       </div>
-    //       <div className="portfolio-details-image">
-    //         <img
-    //           src={`images/${projectdata.projectDetails.image}`}
-    //           alt={projectdata.projectDetails.title}
-    //         />
-    //       </div>
-    //       <div className="portfolio-details-descriptions">
-    //         <p>{projectdata.projectDetails.excerpt}</p>
-    //         <p>{projectdata.projectDetails.fullDescription}</p>
-    //       </div>
-    //       <div className="portfolio-details-tools">
-    //         <h4> Tools & Libraries </h4>
-    //         <p>{projectdata.projectDetails.tools}</p>
-    //       </div>
-    //       <div className="links">
-    //         <a
-    //           href={projectdata.projectDetails.projectUrl}
-    //           rel="noopener noreferrer"
-    //           target="_blank"
-    //         >
-    //           {" "}
-    //           <i className="fas fa-globe"></i> - Live Site
-    //         </a>
-    //         <a
-    //           href={projectdata.projectDetails.github}
-    //           rel="noopener noreferrer"
-    //           target="_blank"
-    //         >
-    //           <i className="fab fa-github"></i> - Code
-    //         </a>
-    //       </div>
-    //     </div>
-    //   </div>
-    // )
   );
 };
 
