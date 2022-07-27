@@ -1,3 +1,23 @@
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+body {
+  background: #3a4750 !important;
+  color: #eee !important;
+  font-family: "Share Tech Mono", monospace !important;
+  font-size: 16px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+}
+
 .heading-text {
   font-family: "Rubik Mono One", sans-serif;
 }
@@ -25,6 +45,8 @@
 .fa-sass {
   color: #cd6799;
 }
+
+/* }
 .modal {
   position: fixed;
   top: 0;
@@ -170,83 +192,7 @@
   -webkit-transform: scale(0);
   transform: scale(0);
 }
-.portfolio-modal .portfolio-details #close-portfolio {
-  text-align: right;
-  font-size: 1rem;
-}
-.portfolio-modal
-  .portfolio-details
-  #close-portfolio
-  #close-portfolio-btn:hover {
-  color: #00adb5;
-}
-.portfolio-modal .portfolio-details h1 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-.portfolio-modal .portfolio-details-image {
-  max-height: 180px;
-  overflow: hidden;
-}
-.portfolio-modal .portfolio-details-image img {
-  max-height: 180px;
-  width: auto;
-  height: 100%;
-}
-.portfolio-modal .portfolio-details-descriptions {
-  padding: 0.5rem 0;
-  line-height: 1.8;
-}
-.portfolio-modal .portfolio-details-tools {
-  padding: 0.5rem 0;
-}
-.portfolio-modal .portfolio-details-tools h4 {
-  color: #b7985b;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-.portfolio-modal .portfolio-details-tools li {
-  list-style: none;
-  margin: 0.5rem;
-  font-size: 0.9rem;
-}
-.portfolio-modal .portfolio-details .links {
-  padding: 0.5rem 0;
-}
-.portfolio-modal .portfolio-details .links a {
-  padding: 0.3rem 1rem;
-  border: 1px solid #eee;
-}
-.modal.show-portfolio {
-  display: block;
-}
-.modal.show-portfolio .portfolio-modal {
-  display: block;
-}
-.modal.show-portfolio .portfolio-modal .portfolio-details {
-  -webkit-animation: extend 0.5s ease-in-out forwards;
-  animation: extend 0.5s ease-in-out forwards;
-}
-@-webkit-keyframes extend {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-@keyframes extend {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
+
 .featured-session {
   width: 100vw;
   padding: 2rem 0;
@@ -300,32 +246,8 @@
 .featured-session .featured-inner .featured-content * {
   padding: 0.5rem 0;
 }
-html {
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-}
-body {
-  background: #3a4750 !important;
-  color: #eee !important;
-  font-family: "Share Tech Mono", monospace !important;
-  font-size: 16px;
-}
-* {
-  padding: 0;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-img {
-  width: 100%;
-}
-a {
-  text-decoration: none;
-  color: #eee;
-}
-a:hover {
-  color: #00adb5;
-}
+
+
 nav {
   position: fixed;
   top: 0;
@@ -517,30 +439,12 @@ nav .btn-hamburger-outer .btn-hamburger.active .btn-line:nth-child(4) {
   margin-right: auto;
   margin-left: auto;
 }
-.portfolio-container .portfolio-card {
-  width: 320px;
-  margin: 12px;
-  background: #eee;
-  color: #303841;
-  height: 400px;
-  padding: 1.5rem 1rem;
-  border-radius: 25px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
+
 .portfolio-container .portfolio-card * {
   margin-bottom: 0.5rem;
 }
 .portfolio-container .portfolio-card a {
-  color: #303841;
-  font-size: 1rem;
+
 }
 .portfolio-container .portfolio-card a:hover {
   color: #00adb5;
@@ -697,4 +601,4 @@ footer {
 .filter-active,
 .sort-active {
   color: #00adb5 !important;
-}
+} */

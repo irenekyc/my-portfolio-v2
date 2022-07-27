@@ -2,6 +2,7 @@ import React, { useState, useEffect, FunctionComponent } from "react";
 import MainTagIcon from "../MainTagIcon/MainTagIcon";
 import { CSSTransition } from "react-transition-group";
 import { Project } from "../../typings/Project";
+import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
   data: Project;
@@ -24,14 +25,14 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({
 
   return (
     <CSSTransition in={ready} timeout={500} unmountOnExit classNames="fadeIn">
-      <div className="portfolio-card">
-        <div className="portfolio-card-heading">
-          <div className="portfolio-card-heading-main">
+      <div className={styles.ikProjectCard__container}>
+        <div className={styles.ikProjectCard__heading}>
+          <div className={styles.ikProjectCard__heading__tags}>
             {data.mainTag.map((tag) => (
               <MainTagIcon tag={tag} key={`${data.title}__${tag}`} />
             ))}
           </div>
-          <div className="portfolio-card-heading-links">
+          <div className={styles.ikProjectCard__heading__links}>
             <a href={data.projectUrl} rel="noopener noreferrer" target="_blank">
               <i className="fas fa-globe"></i>
             </a>
@@ -40,17 +41,22 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({
             </a>
           </div>
         </div>
-        <div className="portfolio-card-title">
-          <h1>{data.title}</h1>
+        <div className={styles.ikProjectCard__title__div}>
+          <h2 className={styles.ikProjectCard__title}>{data.title}</h2>
         </div>
-        <div className="portfolio-card-image">
+
+        <div className={styles.ikProjectCard__image}>
           <img src={`images/${data.image}`} alt="" />
         </div>
-        <div className="portoflio-card-content">
+        <div className={styles.ikProjectCard__excerpt}>
           <p>{data.excerpt}</p>
         </div>
-        <div className="portfolio-card-learn-more">
-          <button onClick={() => onClickOpenDetails(data)} id={data.title}>
+        <div>
+          <button
+            className={styles.ikProjectCard__learnMore}
+            onClick={() => onClickOpenDetails(data)}
+            id={data.title}
+          >
             {" "}
             Learn more
           </button>
