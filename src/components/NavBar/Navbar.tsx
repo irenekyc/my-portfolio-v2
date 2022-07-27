@@ -8,24 +8,26 @@ const NavBar = () => {
   return (
     <>
       <nav className={styles.ikNavBar}>
-        <h1> Irene K. </h1>
-        <div className={styles.ikNavBar__hamburger__div}>
-          <label
-            htmlFor="toggle-menu"
-            className={`${isOpen ? styles.ikNavBar__open : ""} ${
-              styles.ikNavBar__hamburger__button
-            }`}
-          >
-            <input
-              type="checkbox"
-              value="open"
-              id="toggle-menu"
-              onClick={() => setIsOpen(!isOpen)}
-            />
-            <div className={styles.ikNavBar__hamburger__button__line}></div>
-            <div className={styles.ikNavBar__hamburger__button__line}></div>
-            <div className={styles.ikNavBar__hamburger__button__line}></div>
-          </label>
+        <div className={styles.ikNavBar__container}>
+          <h2> Irene K. </h2>
+          <div className={styles.ikNavBar__hamburger__div}>
+            <label
+              htmlFor="toggle-menu"
+              className={`${isOpen ? styles.ikNavBar__open : ""} ${
+                styles.ikNavBar__hamburger__button
+              }`}
+            >
+              <input
+                type="checkbox"
+                value="open"
+                id="toggle-menu"
+                onClick={() => setIsOpen(!isOpen)}
+              />
+              <div className={styles.ikNavBar__hamburger__button__line}></div>
+              <div className={styles.ikNavBar__hamburger__button__line}></div>
+              <div className={styles.ikNavBar__hamburger__button__line}></div>
+            </label>
+          </div>
         </div>
       </nav>
       {<ModalMenu showMenu={isOpen} />}

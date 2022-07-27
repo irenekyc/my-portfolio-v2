@@ -17,13 +17,23 @@ const App = () => {
     dispatch(loadProjects());
     window.scroll(0, 0);
   }, [dispatch]);
+  const onSetFilter = ({
+    filter,
+    sort,
+  }: {
+    filter: string | null;
+    sort: string | null;
+  }) => {
+    console.log(filter);
+    console.log(sort);
+  };
 
   return (
     <Fragment>
       <NavBar />
       <Hero />
       <Featured />
-      <FilterBar />
+      <FilterBar setConditions={onSetFilter} />
       <Pagination />
       <PortfolioMain />
       <Pagination />
