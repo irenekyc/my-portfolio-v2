@@ -1,7 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import loadProjects from "./actions/loadProjects";
+import { Project } from "../../typings/Project";
 
 type ProjectsStates = {
-  projects: Array<any>;
+  projects: Array<Project>;
   error: boolean;
   loading: boolean;
 };
@@ -16,28 +18,23 @@ export const projectsSlice = createSlice({
   name: "Projects",
   initialState,
   reducers: {},
-  extraReducers: () => {
-    // builder.addCase(
-    //   loadNewClientPromotions.pending,
-    //   (state, action: PayloadAction<PromotionType[] | undefined>) => {
-    //     if (action.payload) {
-    //       state.newClientPromotion = action.payload;
-    //     }
-    //   }
-    // );
-    // builder.addCase(
-    //   loadPromotions.fulfilled,
-    //   (
-    //     state,
-    //     action: PayloadAction<{
-    //       promotions: PromotionType[];
-    //       heroPromotion: PromotionType[];
-    //     }>
-    //   ) => {
-    //     state.promotions = action.payload.promotions;
-    //     state.heroPromotion = action.payload.heroPromotion;
-    //   }
-    // );
+  extraReducers: (builder) => {
+    builder.addCase(loadProjects.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(
+      loadProjects.fulfilled,
+      (
+        state,
+        action: PayloadAction<{
+          projects: Array<Project>;
+          error: boolean;
+        }>
+      ) => {
+        state.projects = action.payload.projects;
+        state.error = action.payload.error;
+      }
+    );
   },
 });
 

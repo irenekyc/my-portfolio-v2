@@ -1,6 +1,4 @@
 import React, { Fragment, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { fetchData } from "./actions/data";
 import "./App.css";
 
 import NavBar from "./components/NavBar";
@@ -11,11 +9,13 @@ import FilterBar from "./components/FilterBar";
 import PortfolioMain from "./components/PortfolioMain/PortfolioMain";
 import Pagination from "./components/Pagination";
 import Footer from "./components/Footer";
+import { loadProjects } from "./redux/projects/actions";
+import { useAppDispatch } from "./hooks";
 
 const App = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(fetchData());
+    dispatch(loadProjects());
     window.scroll(0, 0);
   }, [dispatch]);
 

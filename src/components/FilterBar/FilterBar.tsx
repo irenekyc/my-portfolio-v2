@@ -1,79 +1,45 @@
-import React, { useEffect, useRef } from "react";
-import { useSelector, useDispatch, RootStateOrAny } from "react-redux";
-import { fetchData } from "../../legacy-redux/actions/data";
+import React, { useRef } from "react";
 
 const FilterBar = () => {
-  const dispatch = useDispatch();
-  const { curPage, sort, filter, init } = useSelector(
-    (state: RootStateOrAny) => state.status
-  );
   const scrollToRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    if (!init && scrollToRef && scrollToRef.current) {
-      window.scrollTo(0, scrollToRef.current.offsetTop - 60);
-    }
-  }, [curPage, init]);
+  const filter: string = "";
+  const sort: string = "asc";
 
   return (
     <section className="filter-session" ref={scrollToRef}>
       <div className="filter-session-inner">
         <div className="filter">
           <span> Filter by</span>
-          <button
-            className={filter === "SCSS" ? `filter-active` : ""}
-            onClick={() => dispatch(fetchData(0, sort, "SCSS"))}
-          >
+          <button className={filter === "SCSS" ? `filter-active` : ""}>
             {" "}
             Scss
           </button>
-          <button
-            className={filter === "JS" ? `filter-active` : ""}
-            onClick={() => dispatch(fetchData(0, sort, "JS"))}
-          >
+          <button className={filter === "JS" ? `filter-active` : ""}>
             {" "}
             JS
           </button>
-          <button
-            className={filter === "API" ? `filter-active` : ""}
-            onClick={() => dispatch(fetchData(0, sort, "API"))}
-          >
+          <button className={filter === "API" ? `filter-active` : ""}>
             {" "}
             API
           </button>
-          <button
-            className={filter === "react" ? `filter-active` : ""}
-            onClick={() => dispatch(fetchData(0, sort, "react"))}
-          >
+          <button className={filter === "react" ? `filter-active` : ""}>
             {" "}
             React js
           </button>
-          <button
-            className={filter === "MongoDB" ? `filter-active` : ""}
-            onClick={() => dispatch(fetchData(0, sort, "MongoDB"))}
-          >
+          <button className={filter === "MongoDB" ? `filter-active` : ""}>
             {" "}
             MongoDB{" "}
           </button>
-          <button onClick={() => dispatch(fetchData(0, sort, "none"))}>
-            {" "}
-            Clear
-          </button>
+          <button> Clear</button>
         </div>
 
         <div className="sort">
           <span> Sort by</span>
-          <button
-            className={sort === "desc" ? `sort-active` : ""}
-            onClick={() => dispatch(fetchData(0, "desc", filter))}
-          >
+          <button className={sort === "desc" ? `sort-active` : ""}>
             {" "}
             Latest
           </button>
-          <button
-            className={sort === "asc" ? `sort-active` : ""}
-            onClick={() => dispatch(fetchData(0, "asc", filter))}
-          >
+          <button className={sort === "asc" ? `sort-active` : ""}>
             {" "}
             Earliest
           </button>
