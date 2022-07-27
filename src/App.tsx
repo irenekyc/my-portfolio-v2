@@ -12,6 +12,7 @@ import { loadProjects } from "./redux/projects/actions";
 import { useAppDispatch, useAppSelector } from "./hooks";
 import { Project } from "./typings/Project";
 import { RootState } from "./store";
+import { SORT_LATEST } from "./constants";
 
 const App = () => {
   const [projectList, setProjectList] = useState<Array<Project>>([]);
@@ -37,8 +38,14 @@ const App = () => {
         project.tools.includes(filter)
       );
     }
-    if (sort) {
-      // do something
+    if (sort === SORT_LATEST) {
+      projectArr = projectArr.sort(
+        (a: Project, b: Project) => b.projectDate - a.projectDate
+      );
+    } else {
+      projectArr = projectArr.sort(
+        (a: Project, b: Project) => a.projectDate - b.projectDate
+      );
     }
 
     setProjectList(projectArr);

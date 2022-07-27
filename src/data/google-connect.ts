@@ -52,11 +52,10 @@ const fetchGoogle = async (): Promise<{
 }> => {
   const projectsSheetId = process.env.REACT_APP_GOOGLE_PROJECTS_SHEET_ID;
   let error = false;
-  console.log(projectsSheetId);
+
   let projects: any[] = [];
 
   const creds = createCreds();
-  console.log(creds);
 
   if (!projectsSheetId || !creds)
     return {
@@ -86,6 +85,7 @@ const fetchGoogle = async (): Promise<{
         mainTag: row.mainTag.split(",").map((tag: string) => tag.trim()),
         github: row.github,
         projectUrl: row.projectUrl,
+        projectDate: new Date(row.projectDate).getTime(),
       });
     });
 

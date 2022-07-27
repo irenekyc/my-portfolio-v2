@@ -51,13 +51,13 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
           <span> Filter by</span>
           <button
             className={
-              filter === "SCSS" ? styles.ikFilterBar__button__active : ""
+              filter === "Next" ? styles.ikFilterBar__button__active : ""
             }
-            id={"SCSS"}
+            id={"Next"}
             onClick={onClickFilter}
           >
             {" "}
-            Scss
+            NextJs
           </button>
           <button
             className={
@@ -81,13 +81,13 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
           </button>
           <button
             className={
-              filter === "react" ? styles.ikFilterBar__button__active : ""
+              filter === "React" ? styles.ikFilterBar__button__active : ""
             }
-            id="react"
+            id="React"
             onClick={onClickFilter}
           >
             {" "}
-            React js
+            React
           </button>
           <button
             className={
@@ -98,6 +98,46 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
           >
             {" "}
             MongoDB{" "}
+          </button>
+          <button
+            className={
+              filter === "Solidity" ? styles.ikFilterBar__button__active : ""
+            }
+            id="Solidity"
+            onClick={onClickFilter}
+          >
+            {" "}
+            Solidity{" "}
+          </button>
+          <button
+            className={
+              filter === "Python" ? styles.ikFilterBar__button__active : ""
+            }
+            id="Python"
+            onClick={onClickFilter}
+          >
+            {" "}
+            Python{" "}
+          </button>
+          <button
+            className={
+              filter === "Webflow" ? styles.ikFilterBar__button__active : ""
+            }
+            id="Webflow"
+            onClick={onClickFilter}
+          >
+            {" "}
+            Webflow{" "}
+          </button>
+          <button
+            className={
+              filter === "Typescript" ? styles.ikFilterBar__button__active : ""
+            }
+            id="Typescript"
+            onClick={onClickFilter}
+          >
+            {" "}
+            Typescript{" "}
           </button>
           <button onClick={clearFilter}> Clear</button>
         </div>

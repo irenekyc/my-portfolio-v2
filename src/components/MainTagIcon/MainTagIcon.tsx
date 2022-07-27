@@ -7,7 +7,6 @@ interface MainTagIconProps {
 const MainTagIcon: FunctionComponent<MainTagIconProps> = ({
   tag,
 }: MainTagIconProps) => {
-  console.log(tag);
   switch (tag.toLowerCase()) {
     case "css":
       return <i className="fab fa-css3-alt"></i>;
