@@ -1,0 +1,54 @@
+.ikModal {
+  &__dialog {
+    color: #eee;
+  }
+  &__content {
+    background: #303841 !important;
+
+    color: #eee;
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+  }
+  &__title {
+    font-size: 1.5rem;
+  }
+  &__image {
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+  &__descriptions {
+    padding: 0.5rem 0;
+    line-height: 1.8;
+  }
+  &__tools {
+    padding: 0.5rem 0;
+    h4 {
+      color: #b7985b;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__button {
+    padding: 0.3rem 1rem;
+    border: 1px solid #eee;
+    text-decoration: none;
+    color: #eee;
+
+    &:hover {
+      color: #eee;
+    }
+  }
+}

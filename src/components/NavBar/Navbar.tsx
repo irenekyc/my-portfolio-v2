@@ -1,26 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import styles from "./NavBar.module.scss";
+import ModalMenu from "../ModalMenu";
 
 const NavBar = () => {
-  const isOpen = false;
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  let btnClass = "";
-  if (isOpen) {
-    btnClass = "active";
-  } else {
-    btnClass = "";
-  }
   return (
-    <nav>
-      <h1> Irene K. </h1>
-      <div className="btn-hamburger-outer">
-        <label htmlFor="toggle-menu" className={`btn-hamburger ${btnClass}`}>
-          <input type="checkbox" value="open" id="toggle-menu" />
-          <div className="btn-line"></div>
-          <div className="btn-line"></div>
-          <div className="btn-line"></div>
-        </label>
-      </div>
-    </nav>
+    <>
+      <nav className={styles.ikNavBar}>
+        <div className={styles.ikNavBar__container}>
+          <h2> Irene K. </h2>
+          <div className={styles.ikNavBar__hamburger__div}>
+            <label
+              htmlFor="toggle-menu"
+              className={`${isOpen ? styles.ikNavBar__open : ""} ${
+                styles.ikNavBar__hamburger__button
+              }`}
+            >
+              <input
+                type="checkbox"
+                value="open"
+                id="toggle-menu"
+                onClick={() => setIsOpen(!isOpen)}
+              />
+              <div className={styles.ikNavBar__hamburger__button__line}></div>
+              <div className={styles.ikNavBar__hamburger__button__line}></div>
+              <div className={styles.ikNavBar__hamburger__button__line}></div>
+            </label>
+          </div>
+        </div>
+      </nav>
+      {<ModalMenu showMenu={isOpen} />}
+    </>
   );
 };
 

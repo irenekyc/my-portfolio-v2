@@ -1,0 +1,74 @@
+.ikProjectCard {
+  &__container {
+    width: 320px;
+    margin: 12px;
+    background: #eee;
+    color: #303841;
+    height: 420px;
+    padding: 1.5rem 1rem;
+    border-radius: 25px;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  &__title {
+    &__div {
+      height: 3.5rem;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: flex-end;
+    }
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.25rem;
+
+    &__tags {
+      display: flex;
+      > * {
+        margin-right: 0.5rem;
+      }
+      i {
+        font-size: 40px;
+      }
+    }
+    &__links {
+      a {
+        margin-right: 0.5rem;
+        color: #303841;
+        font-size: 1rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      display: flex;
+    }
+  }
+  &__image {
+    margin-bottom: 0.25rem;
+    height: 150px;
+    overflow: hidden;
+  }
+  &__excerpt {
+    display: -webkit-box;
+    max-width: 300px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0.25rem;
+  }
+
+  &__learnMore {
+    font-size: 14px;
+    padding: 0.1rem 0.5rem;
+  }
+}

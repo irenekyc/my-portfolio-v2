@@ -52,11 +52,10 @@ const fetchGoogle = async (): Promise<{
 }> => {
   const projectsSheetId = process.env.REACT_APP_GOOGLE_PROJECTS_SHEET_ID;
   let error = false;
-  console.log(projectsSheetId);
+
   let projects: any[] = [];
 
   const creds = createCreds();
-  console.log(creds);
 
   if (!projectsSheetId || !creds)
     return {
@@ -81,11 +80,12 @@ const fetchGoogle = async (): Promise<{
         fullDescription: row.fullDescription,
         excerpt: row.excerpt as string,
         myRole: row.myRole,
-        image: row.image,
+        image: row.image === "" ? "default-image.jpg" : row.image,
         tools: row.tools.split(",").map((tool: string) => tool.trim()),
         mainTag: row.mainTag.split(",").map((tag: string) => tag.trim()),
-        github: row.github,
-        projectUrl: row.projectUrl,
+        github: row.github === "NA" ? undefined : row.github,
+        projectUrl: row.projectUrl === "NA" ? undefined : row.projectUrl,
+        projectDate: new Date(row.projectDate).getTime(),
       });
     });
 

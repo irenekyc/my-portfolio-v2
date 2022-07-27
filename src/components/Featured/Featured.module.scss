@@ -1,0 +1,52 @@
+.ikFeaturedSession {
+  width: 100vw;
+  padding: 2rem 0;
+  &__inner {
+    width: 90%;
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 1rem;
+    border: 2px solid #b7985b;
+    border-radius: 15px;
+    -webkit-box-shadow: 5px 5px 10px var(#b7985b, 0.8) -5px 5px 10px var(#b7985b, 0.8);
+    box-shadow: 5px 5px 10px var(#b7985b, 0.8) -5px 5px 10px var(#b7985b, 0.8);
+
+    &__title {
+      margin: 0.5rem 0;
+      h5 {
+        padding: 0.6rem 0;
+        span {
+          padding: 0.5rem;
+          font-size: 1rem;
+          background: #b50800;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    &__heading {
+      padding: 0.5rem 0;
+      font-size: 2rem;
+    }
+    &__image {
+      height: 150px;
+      padding: 0.5rem 0;
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+    &__content {
+      padding: 0.5rem 0;
+      line-height: 1.8;
+    }
+  }
+}

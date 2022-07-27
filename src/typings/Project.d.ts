@@ -4,7 +4,7 @@ export type Project = {
   excerpt: string;
   fullDescription: string;
   myRole: string | undefined;
-  projectDate: Date;
+  projectDate: number;
   image: string | undefined;
   tools: Array<string>;
   mainTag: Array<string>;

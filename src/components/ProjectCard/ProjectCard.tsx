@@ -1,24 +1,19 @@
 import React, { useState, useEffect, FunctionComponent } from "react";
-import { useDispatch } from "react-redux";
-import { openProject } from "../../legacy-redux/actions/data";
-import { openPortfolio } from "../../legacy-redux/actions/modal";
 import MainTagIcon from "../MainTagIcon/MainTagIcon";
 import { CSSTransition } from "react-transition-group";
+import { Project } from "../../typings/Project";
+import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
-  data: any;
+  data: Project;
+  onClickOpenDetails: (projectDetails: Project) => void;
 }
 
 const ProjectCard: FunctionComponent<ProjectCardProps> = ({
   data,
+  onClickOpenDetails,
 }: ProjectCardProps) => {
   const [ready, setReady] = useState(false);
-  const dispatch = useDispatch();
-
-  const openProjectDetails = () => {
-    dispatch(openProject(data._id));
-    dispatch(openPortfolio());
-  };
 
   useEffect(() => {
     if (data) {
@@ -27,34 +22,49 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({
       setReady(false);
     }
   }, [data]);
-  console.log(data);
+
   return (
     <CSSTransition in={ready} timeout={500} unmountOnExit classNames="fadeIn">
-      <div className="portfolio-card">
-        <div className="portfolio-card-heading">
-          <div className="portfolio-card-heading-main">
-            <MainTagIcon tag={data.mainTag} />
+      <div className={styles.ikProjectCard__container}>
+        <div className={styles.ikProjectCard__heading}>
+          <div className={styles.ikProjectCard__heading__tags}>
+            {data.mainTag.map((tag) => (
+              <MainTagIcon tag={tag} key={`${data.title}__${tag}`} />
+            ))}
           </div>
-          <div className="portfolio-card-heading-links">
-            <a href={data.projectUrl} rel="noopener noreferrer" target="_blank">
-              <i className="fas fa-globe"></i>
-            </a>
-            <a href={data.github} rel="noopener noreferrer" target="_blank">
-              <i className="fab fa-github"></i>
-            </a>
+          <div className={styles.ikProjectCard__heading__links}>
+            {data.projectUrl && (
+              <a
+                href={data.projectUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <i className="fas fa-globe"></i>
+              </a>
+            )}
+            {data.github && (
+              <a href={data.github} rel="noopener noreferrer" target="_blank">
+                <i className="fab fa-github"></i>
+              </a>
+            )}
           </div>
         </div>
-        <div className="portfolio-card-title">
-          <h1>{data.title}</h1>
+        <div className={styles.ikProjectCard__title__div}>
+          <h2 className={styles.ikProjectCard__title}>{data.title}</h2>
         </div>
-        <div className="portfolio-card-image">
+
+        <div className={styles.ikProjectCard__image}>
           <img src={`images/${data.image}`} alt="" />
         </div>
-        <div className="portoflio-card-content">
+        <div className={styles.ikProjectCard__excerpt}>
           <p>{data.excerpt}</p>
         </div>
-        <div className="portfolio-card-learn-more">
-          <button onClick={openProjectDetails} id={data._id}>
+        <div>
+          <button
+            className={styles.ikProjectCard__learnMore}
+            onClick={() => onClickOpenDetails(data)}
+            id={data.title}
+          >
             {" "}
             Learn more
           </button>

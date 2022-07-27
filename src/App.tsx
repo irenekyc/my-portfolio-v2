@@ -1,35 +1,77 @@
-import React, { Fragment, useEffect } from "react";
-import "./App.css";
+import React, { Fragment, useEffect, useState } from "react";
+import "./App.scss";
 
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero/Hero";
 import Featured from "./components/Featured";
-import Modal from "./layout/Modal";
 import FilterBar from "./components/FilterBar";
 import PortfolioMain from "./components/PortfolioMain/PortfolioMain";
-import Pagination from "./components/Pagination";
+
 import Footer from "./components/Footer";
 import { loadProjects } from "./redux/projects/actions";
-import { useAppDispatch } from "./hooks";
+import { useAppDispatch, useAppSelector } from "./hooks";
+import { Project } from "./typings/Project";
+import { RootState } from "./store";
+import { SORT_LATEST } from "./constants";
 
 const App = () => {
+  const [projectList, setProjectList] = useState<Array<Project>>([]);
+  const [filter, setFilter] = useState<string | null>(null);
+  const [sort, setSort] = useState<string>("desc");
+
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     dispatch(loadProjects());
-    window.scroll(0, 0);
+    window.scrollTo(0, 0);
   }, [dispatch]);
+
+  const projects: Array<Project> = useAppSelector(
+    (state: RootState) => state.projects.projects
+  );
+
+  useEffect(() => {
+    if (projects.length === 0) return;
+    let projectArr = [...projects];
+    if (filter) {
+      projectArr = projectArr.filter((project: Project) =>
+        project.tools.includes(filter)
+      );
+    }
+    if (sort === SORT_LATEST) {
+      projectArr = projectArr.sort(
+        (a: Project, b: Project) => b.projectDate - a.projectDate
+      );
+    } else {
+      projectArr = projectArr.sort(
+        (a: Project, b: Project) => a.projectDate - b.projectDate
+      );
+    }
+
+    setProjectList(projectArr);
+  }, [projects, filter, sort]);
+
+  const onSetFilter = ({
+    filter,
+    sort,
+  }: {
+    filter: string | null;
+    sort: string;
+  }) => {
+    setFilter(filter);
+    setSort(sort);
+    //TODO: get the correct position
+    window.scrollTo({ top: 850, left: 0, behavior: "smooth" });
+  };
 
   return (
     <Fragment>
       <NavBar />
       <Hero />
       <Featured />
-      <FilterBar />
-      <Pagination />
-      <PortfolioMain />
-      <Pagination />
+      <FilterBar setConditions={onSetFilter} />
+      <PortfolioMain projects={projectList} />
       <Footer />
-      <Modal />
     </Fragment>
   );
 };
