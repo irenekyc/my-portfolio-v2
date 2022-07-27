@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "./App.css";
 
 import NavBar from "./components/NavBar";
@@ -6,26 +6,53 @@ import Hero from "./components/Hero/Hero";
 import Featured from "./components/Featured";
 import FilterBar from "./components/FilterBar";
 import PortfolioMain from "./components/PortfolioMain/PortfolioMain";
-import Pagination from "./components/Pagination";
+
 import Footer from "./components/Footer";
 import { loadProjects } from "./redux/projects/actions";
-import { useAppDispatch } from "./hooks";
+import { useAppDispatch, useAppSelector } from "./hooks";
+import { Project } from "./typings/Project";
+import { RootState } from "./store";
 
 const App = () => {
+  const [projectList, setProjectList] = useState<Array<Project>>([]);
+  const [filter, setFilter] = useState<string | null>(null);
+  const [sort, setSort] = useState<string>("desc");
+
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     dispatch(loadProjects());
     window.scroll(0, 0);
   }, [dispatch]);
+
+  const projects: Array<Project> = useAppSelector(
+    (state: RootState) => state.projects.projects
+  );
+
+  useEffect(() => {
+    if (projects.length === 0) return;
+    let projectArr = [...projects];
+    if (filter) {
+      projectArr = projectArr.filter((project: Project) =>
+        project.tools.includes(filter)
+      );
+    }
+    if (sort) {
+      // do something
+    }
+
+    setProjectList(projectArr);
+  }, [projects, filter, sort]);
+
   const onSetFilter = ({
     filter,
     sort,
   }: {
     filter: string | null;
-    sort: string | null;
+    sort: string;
   }) => {
-    console.log(filter);
-    console.log(sort);
+    setFilter(filter);
+    setSort(sort);
   };
 
   return (
@@ -34,9 +61,7 @@ const App = () => {
       <Hero />
       <Featured />
       <FilterBar setConditions={onSetFilter} />
-      <Pagination />
-      <PortfolioMain />
-      <Pagination />
+      <PortfolioMain projects={projectList} />
       <Footer />
     </Fragment>
   );

@@ -1,0 +1,30 @@
+.ikPaginationBar {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 900px;
+  padding: 2rem 0;
+  display: flex;
+
+  &__button {
+    font-size: 1rem;
+    color: #00adb5;
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+
+    &:hover {
+      color: #eee;
+    }
+
+    &__prev {
+      margin-left: 0;
+      margin-right: auto;
+    }
+    &__next {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+}

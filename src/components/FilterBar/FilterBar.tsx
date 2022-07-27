@@ -7,7 +7,7 @@ interface FilterBarProps {
     sort,
   }: {
     filter: string | null;
-    sort: string | null;
+    sort: string;
   }) => void;
 }
 

@@ -1,30 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, FunctionComponent, useEffect } from "react";
 
 import ProjectCard from "../ProjectCard/ProjectCard";
-import Spinner from "../Spinner/Spinner";
 import { Project } from "../../typings/Project";
-import { useAppSelector } from "../../hooks";
-import { RootState } from "../../store";
+
 import ModalPortfolio from "../ModalPortfolio";
+import styles from "./PortfolioMain.module.scss";
+import Pagination from "../Pagination";
+import { NUM_PER_PAGE } from "../../constants";
 
-const PortfolioMain = () => {
-  const projects: Project[] = useAppSelector(
-    (state: RootState) => state.projects.projects
-  );
+interface PortfolioMainProps {
+  projects: Array<Project>;
+}
 
+const PortfolioMain: FunctionComponent<PortfolioMainProps> = ({
+  projects,
+}: PortfolioMainProps) => {
   const [openDetailsModal, setOpenDetailsModal] = useState<Project | null>(
     null
   );
+  const [page, setPage] = useState<number>(1);
+  const [projectList, setProjectList] = useState<Array<Project>>(projects);
+  const [currentPageProjects, setCurrentPageProjects] = useState<
+    Array<Project>
+  >([]);
+
+  useEffect(() => {
+    setProjectList(projects);
+    setPage(1);
+  }, [projects]);
+
+  const goToPrevPage = () => {
+    if (page === 0) return;
+    setPage(page - 1);
+    // scroll to top
+  };
+
+  const goToNextPage = () => {
+    setPage(page + 1);
+    // scroll to top
+  };
+
+  useEffect(() => {
+    if (projectList.length === 0) {
+      setCurrentPageProjects([]);
+    }
+    setCurrentPageProjects(
+      projectList.slice((page - 1) * NUM_PER_PAGE, page * NUM_PER_PAGE)
+    );
+  }, [projectList, page]);
 
   return (
-    <section className="portfolio-container">
-      <ModalPortfolio
-        show={openDetailsModal !== null}
-        projectDetails={openDetailsModal}
-        clickClose={() => setOpenDetailsModal(null)}
-      />
-      {projects.length > 0 ? (
-        projects.map((p: Project) => {
+    <>
+      <section className={styles.ikPortfolioMain}>
+        <ModalPortfolio
+          show={openDetailsModal !== null}
+          projectDetails={openDetailsModal}
+          clickClose={() => setOpenDetailsModal(null)}
+        />
+        {currentPageProjects.map((p: Project) => {
           return (
             <ProjectCard
               key={p.title}
@@ -32,11 +65,15 @@ const PortfolioMain = () => {
               onClickOpenDetails={(project) => setOpenDetailsModal(project)}
             />
           );
-        })
-      ) : (
-        <Spinner />
-      )}
-    </section>
+        })}
+      </section>
+      <Pagination
+        hasPrev={page > 1}
+        hasNext={Math.ceil(projectList.length / NUM_PER_PAGE) > page}
+        goToPrevPage={goToPrevPage}
+        goToNextPage={goToNextPage}
+      />
+    </>
   );
 };
 
