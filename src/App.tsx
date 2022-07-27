@@ -61,7 +61,7 @@ const App = () => {
     setFilter(filter);
     setSort(sort);
     //TODO: get the correct position
-    window.scrollTo({ top: 850, behavior: "smooth" });
+    window.scrollTo({ top: 850, left: 0, behavior: "smooth" });
   };
 
   return (
