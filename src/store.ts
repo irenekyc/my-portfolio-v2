@@ -3,7 +3,7 @@ import projectsReducer from "./redux/projects/projectsSlice";
 
 export const store = configureStore({
   reducer: {
-    projectSlices: projectsReducer,
+    projects: projectsReducer,
   },
 });
 

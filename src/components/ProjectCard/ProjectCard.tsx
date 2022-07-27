@@ -1,7 +1,7 @@
 import React, { useState, useEffect, FunctionComponent } from "react";
 import { useDispatch } from "react-redux";
-import { openProject } from "../../actions/data";
-import { openPortfolio } from "../../actions/modal";
+import { openProject } from "../../legacy-redux/actions/data";
+import { openPortfolio } from "../../legacy-redux/actions/modal";
 import MainTagIcon from "../MainTagIcon/MainTagIcon";
 import { CSSTransition } from "react-transition-group";
 
@@ -27,6 +27,7 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({
       setReady(false);
     }
   }, [data]);
+  console.log(data);
   return (
     <CSSTransition in={ready} timeout={500} unmountOnExit classNames="fadeIn">
       <div className="portfolio-card">

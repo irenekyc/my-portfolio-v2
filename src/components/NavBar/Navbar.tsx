@@ -1,10 +1,7 @@
 import React from "react";
-import { useDispatch, useSelector, RootStateOrAny } from "react-redux";
-import { toggleMenu } from "../../actions/modal";
 
 const NavBar = () => {
-  const dispatch = useDispatch();
-  const isOpen = useSelector((state: RootStateOrAny) => state.modal.menu);
+  const isOpen = false;
 
   let btnClass = "";
   if (isOpen) {
@@ -17,12 +14,7 @@ const NavBar = () => {
       <h1> Irene K. </h1>
       <div className="btn-hamburger-outer">
         <label htmlFor="toggle-menu" className={`btn-hamburger ${btnClass}`}>
-          <input
-            type="checkbox"
-            value="open"
-            id="toggle-menu"
-            onChange={() => dispatch(toggleMenu(isOpen))}
-          />
+          <input type="checkbox" value="open" id="toggle-menu" />
           <div className="btn-line"></div>
           <div className="btn-line"></div>
           <div className="btn-line"></div>

@@ -1,16 +1,21 @@
 import React from "react";
-import { useSelector, RootStateOrAny } from "react-redux";
+
 import ProjectCard from "../ProjectCard/ProjectCard";
 import Spinner from "../Spinner/Spinner";
+import { Project } from "../../typings/Project";
+import { useAppSelector } from "../../hooks";
+import { RootState } from "../../store";
 
 const PortfolioMain = () => {
-  const projects = useSelector((state: RootStateOrAny) => state.data.all);
+  const projects: Project[] = useAppSelector(
+    (state: RootState) => state.projects.projects
+  );
 
   return (
     <section className="portfolio-container">
       {projects !== null ? (
-        projects.map((p: any) => {
-          return <ProjectCard key={p._id} data={p} />;
+        projects.map((p: Project) => {
+          return <ProjectCard key={p.title} data={p} />;
         })
       ) : (
         <Spinner />
