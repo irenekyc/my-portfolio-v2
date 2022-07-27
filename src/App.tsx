@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import "./App.css";
+import "./App.scss";
 
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero/Hero";
@@ -23,7 +23,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(loadProjects());
-    window.scroll(0, 0);
+    window.scrollTo(0, 0);
   }, [dispatch]);
 
   const projects: Array<Project> = useAppSelector(
@@ -60,6 +60,8 @@ const App = () => {
   }) => {
     setFilter(filter);
     setSort(sort);
+    //TODO: get the correct position
+    window.scrollTo({ top: 850, behavior: "smooth" });
   };
 
   return (

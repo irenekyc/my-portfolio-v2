@@ -3,7 +3,7 @@ import styles from "./Featured.module.scss";
 
 const Featured = () => {
   return (
-    <section className={styles.ikFeaturedSession}>
+    <section className={styles.ikFeaturedSession} id="featured-section">
       <div className={styles.ikFeaturedSession__inner}>
         <div className="featured-heading">
           <i className="fab fa-react"></i>

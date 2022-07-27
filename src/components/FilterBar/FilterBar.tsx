@@ -1,4 +1,4 @@
-import React, { useRef, useState, FunctionComponent } from "react";
+import React, { useState, FunctionComponent } from "react";
 import styles from "./FilterBar.module.scss";
 
 interface FilterBarProps {
@@ -14,8 +14,6 @@ interface FilterBarProps {
 const FilterBar: FunctionComponent<FilterBarProps> = ({
   setConditions,
 }: FilterBarProps) => {
-  const scrollToRef = useRef<HTMLElement | null>(null);
-
   const [filter, setFilter] = useState<string | null>(null);
   const [sort, setSort] = useState<string>("desc");
   const onClickFilter = (e: any) => {
@@ -45,7 +43,7 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
   };
 
   return (
-    <section className={styles.ikFilterBar__container} ref={scrollToRef}>
+    <section className={styles.ikFilterBar__container} id="filter-bar">
       <div className={styles.ikFilterBar__inner}>
         <div className="filter">
           <span> Filter by</span>

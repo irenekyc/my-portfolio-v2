@@ -1,11 +1,14 @@
+@import "../../vendors.scss";
+
 .ikHero {
   &__banner {
     width: 100%;
     padding-top: 60px;
     &__inner {
       width: 100%;
-      max-width: 600px;
+      max-width: 700px;
       display: flex;
+      flex-wrap: wrap;
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
@@ -16,7 +19,18 @@
     &__card {
       background: #303841;
       padding: 1.5rem;
-      flex: 1;
+      width: 50%;
+
+      &__coding_hours {
+        width: 100%;
+        order: 1;
+      }
+      &__learning {
+        order: 2;
+      }
+      &__projects {
+        order: 3;
+      }
 
       h3 {
         font-family: monospace;
@@ -25,29 +39,25 @@
       }
     }
   }
-}
+  @include media-breakpoint-up(md) {
+    &__banner {
+      &__inner {
+        flex-wrap: nowrap;
+      }
+      &__card {
+        background: #303841;
+        padding: 1.5rem;
 
-// .hero-banner .hero-banner-inner #learning-hours {
-//   -ms-grid-row: 2;
-//   -ms-grid-column: 1;
-//   grid-area: card1;
-// }
-// .hero-banner .hero-banner-inner #coding-hours {
-//   -ms-grid-row: 1;
-//   -ms-grid-column: 1;
-//   -ms-grid-column-span: 2;
-//   grid-area: card2;
-//   -ms-flex-item-align: center;
-//   -ms-grid-row-align: center;
-//   align-self: center;
-//   margin-right: auto;
-//   margin-left: auto;
-// }
-// .hero-banner .hero-banner-inner #coding-hours h1 {
-//   font-size: 3.3rem;
-// }
-// .hero-banner .hero-banner-inner #projects {
-//   -ms-grid-row: 2;
-//   -ms-grid-column: 2;
-//   grid-area: card3;
-// }
+        &__coding_hours {
+          order: 2;
+        }
+        &__learning {
+          order: 1;
+        }
+        &__projects {
+          order: 3;
+        }
+      }
+    }
+  }
+}
