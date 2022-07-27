@@ -33,12 +33,20 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({
             ))}
           </div>
           <div className={styles.ikProjectCard__heading__links}>
-            <a href={data.projectUrl} rel="noopener noreferrer" target="_blank">
-              <i className="fas fa-globe"></i>
-            </a>
-            <a href={data.github} rel="noopener noreferrer" target="_blank">
-              <i className="fab fa-github"></i>
-            </a>
+            {data.projectUrl && (
+              <a
+                href={data.projectUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <i className="fas fa-globe"></i>
+              </a>
+            )}
+            {data.github && (
+              <a href={data.github} rel="noopener noreferrer" target="_blank">
+                <i className="fab fa-github"></i>
+              </a>
+            )}
           </div>
         </div>
         <div className={styles.ikProjectCard__title__div}>

@@ -18,6 +18,10 @@ img {
   width: 100%;
 }
 
+footer {
+  text-align: center;
+}
+
 .heading-text {
   font-family: "Rubik Mono One", sans-serif;
 }
@@ -45,63 +49,3 @@ img {
 .fa-sass {
   color: #cd6799;
 }
-
-/* 
-
-.portfolio-modal {
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  display: none;
-}
-.portfolio-modal .portfolio-details {
-  width: 90vw;
-  padding: 1.5rem;
-  max-width: 700px;
-  background: #303841;
-  border-radius: 1rem;
-  opacity: 0;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-}
-
-
-
-.portfolio-card-image {
-  max-height: 150px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.portfolio-card-heading-links a {
-  margin-left: 1rem;
-}
-
-.fadeIn-enter {
-  opacity: 0;
-  transform: scale(0.9);
-}
-.fadeIn-enter-active {
-  opacity: 1;
-  transition: all 700ms;
-  transform: scale(1);
-}
-
-.fadeIn-exit {
-  opacity: 1;
-  transform: scale(1);
-}
-.fadeIn-exit-active {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 700ms;
-}
-
-.filter-active,
-.sort-active {
-  color: #00adb5 !important;
-}  */

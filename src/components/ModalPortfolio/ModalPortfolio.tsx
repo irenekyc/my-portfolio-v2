@@ -48,23 +48,27 @@ const ModalPortfolio: FunctionComponent<ModalPortfolioProps> = ({
           <p>{projectDetails.tools.join(", ")}</p>
         </div>
         <div className="links">
-          <a
-            className={styles.ikModal__button}
-            href={projectDetails.projectUrl}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {" "}
-            <i className="fas fa-globe"></i> - Live Site
-          </a>
-          <a
-            className={styles.ikModal__button}
-            href={projectDetails.github}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <i className="fab fa-github"></i> - Code
-          </a>
+          {projectDetails.projectUrl && (
+            <a
+              className={styles.ikModal__button}
+              href={projectDetails.projectUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {" "}
+              <i className="fas fa-globe"></i> - Live Site
+            </a>
+          )}
+          {projectDetails.github && (
+            <a
+              className={styles.ikModal__button}
+              href={projectDetails.github}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <i className="fab fa-github"></i> - Code
+            </a>
+          )}
         </div>
       </Modal.Body>
     </IKModal>

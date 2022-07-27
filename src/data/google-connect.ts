@@ -80,11 +80,11 @@ const fetchGoogle = async (): Promise<{
         fullDescription: row.fullDescription,
         excerpt: row.excerpt as string,
         myRole: row.myRole,
-        image: row.image,
+        image: row.image === "" ? "default-image.jpg" : row.image,
         tools: row.tools.split(",").map((tool: string) => tool.trim()),
         mainTag: row.mainTag.split(",").map((tag: string) => tag.trim()),
-        github: row.github,
-        projectUrl: row.projectUrl,
+        github: row.github === "NA" ? undefined : row.github,
+        projectUrl: row.projectUrl === "NA" ? undefined : row.projectUrl,
         projectDate: new Date(row.projectDate).getTime(),
       });
     });
