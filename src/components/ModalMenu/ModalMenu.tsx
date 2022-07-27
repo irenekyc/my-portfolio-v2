@@ -1,62 +1,79 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
+import styles from "./ModalMenu.module.scss";
 
-const ModalMenu = () => {
+interface ModalMenuProps {
+  showMenu: boolean;
+}
+
+const ModalMenu: FunctionComponent<ModalMenuProps> = ({
+  showMenu,
+}: ModalMenuProps) => {
   return (
-    <div className="modal-menu">
-      <div className="modal-menu-about">
-        <div className="modal-menu-about-image">
-          <img
-            src="images/profile-thumbnail-2.jpg"
-            alt="Irene K web developer"
-          />
+    <section
+      className={`${styles.ikModalMenu__container} ${
+        showMenu ? styles.ikModalMenu__active : ""
+      }`}
+    >
+      <div className={styles.ikModalMenu}>
+        <div className={styles.ikModalMenu__about}>
+          <div className={styles.ikModalMenu__about__image}>
+            <img
+              src="images/profile-thumbnail-2.jpg"
+              alt="Irene K web developer"
+            />
+          </div>
+          <h2> Irene K.</h2>
+          <p> Web Developer</p>
         </div>
-        <h1> Irene K.</h1>
-        <p> Web Developer</p>
+        <div className={styles.ikModalMenu__contact}>
+          <ul>
+            <li>
+              <a
+                href="https://irenekyc.github.io/irene-k/"
+                rel="noopener noreferrer"
+                target="_blank"
+                className={styles.ikModalMenu__link}
+              >
+                My Website
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/irenekyc"
+                rel="noopener noreferrer"
+                target="_blank"
+                className={styles.ikModalMenu__link}
+              >
+                {" "}
+                Github
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://google.com"
+                rel="noopener noreferrer"
+                target="_blank"
+                className={styles.ikModalMenu__link}
+              >
+                {" "}
+                Resume
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/irene-chow-352662a8/"
+                rel="noopener noreferrer"
+                target="_blank"
+                className={styles.ikModalMenu__link}
+              >
+                {" "}
+                LinkedIn{" "}
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div className="modal-menu-contact">
-        <ul>
-          <li>
-            <a
-              href="https://irenekyc.github.io/irene-k/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              My Website
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/irenekyc"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {" "}
-              Github
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://google.com"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {" "}
-              Resume
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/irene-chow-352662a8/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {" "}
-              LinkedIn{" "}
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    </section>
   );
 };
 

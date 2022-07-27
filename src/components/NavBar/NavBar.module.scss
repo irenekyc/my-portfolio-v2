@@ -1,0 +1,84 @@
+.ikNavBar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 8%;
+  max-width: 1100px;
+  background: #3a4750;
+  z-index: 999;
+  height: 60px;
+
+  &__hamburger {
+    &__div {
+      height: 60px;
+      width: 60px;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      input {
+        visibility: hidden;
+      }
+    }
+
+    &__button {
+      width: 50%;
+      height: 50%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-transition: all 1s;
+      transition: all 1s;
+      cursor: pointer;
+      &__line {
+        width: 80%;
+        height: 3px;
+        background: #00adb5;
+        -webkit-transition: all 1s;
+        transition: all 1s;
+      }
+    }
+  }
+}
+
+.ikNavBar__open {
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+
+  .ikNavBar__hamburger__button__line {
+    background: #eee;
+    &:nth-child(3) {
+      display: none;
+    }
+    &:nth-child(2) {
+      transform: rotate(270deg);
+    }
+    &:nth-child(4) {
+      transform: translate3d(0, -7px, 0);
+    }
+  }
+}
