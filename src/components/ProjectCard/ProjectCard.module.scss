@@ -33,6 +33,9 @@
 
     &__tags {
       display: flex;
+      > * {
+        margin-right: 0.5rem;
+      }
       i {
         font-size: 40px;
       }
