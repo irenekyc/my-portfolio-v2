@@ -4,7 +4,6 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero/Hero";
 import Featured from "./components/Featured";
-import Modal from "./layout/Modal";
 import FilterBar from "./components/FilterBar";
 import PortfolioMain from "./components/PortfolioMain/PortfolioMain";
 import Pagination from "./components/Pagination";
@@ -29,7 +28,6 @@ const App = () => {
       <PortfolioMain />
       <Pagination />
       <Footer />
-      <Modal />
     </Fragment>
   );
 };

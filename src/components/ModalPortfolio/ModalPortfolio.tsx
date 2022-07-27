@@ -1,8 +1,23 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
+import IKModal from "../../layout/Modal";
+import { Project } from "../../typings/Project";
 
-const ModalPortfolio = () => {
+interface ModalPortfolioProps {
+  show: boolean;
+  clickClose: () => void;
+  projectDetails: Project | null;
+}
+
+const ModalPortfolio: FunctionComponent<ModalPortfolioProps> = ({
+  show,
+  clickClose,
+  projectDetails,
+}: ModalPortfolioProps) => {
+  if (!projectDetails) return <></>;
   return (
-    <div></div>
+    <IKModal show={show} onHide={clickClose}>
+      <h1>{projectDetails.title}</h1>
+    </IKModal>
     // projectdata !== null &&
     // projectdata.projectDetails !== null && (
     //   <div className="portfolio-modal">
