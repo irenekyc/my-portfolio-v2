@@ -6,4 +6,5 @@ it("Render Footer Section", () => {
   render(<Footer />);
   const footer = screen.getByTestId("footer");
   expect(footer).toBeInTheDocument();
+  expect(footer).toMatchSnapshot();
 });

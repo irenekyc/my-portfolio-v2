@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Featured Section 1`] = `
+<section
+  class="ikFeaturedSession"
+  data-testid="featured-portfolio"
+  id="featured-section"
+>
+  <div
+    class="ikFeaturedSession__inner"
+  >
+    <div
+      class="featured-heading"
+    >
+      <i
+        class="fab fa-react"
+      />
+    </div>
+    <div
+      class="ikFeaturedSession__inner__title"
+    >
+      <h5>
+         
+        <span>
+          FEATURED 
+        </span>
+      </h5>
+      <h2
+        class="ikFeaturedSession__inner__heading"
+        data-testid="featured-portfolio-title"
+      >
+        Portfolio Showcase V2
+      </h2>
+    </div>
+    <div
+      class="ikFeaturedSession__inner__image"
+    >
+      <img
+        alt="portfolio"
+        data-testid="featured-portfolio-image"
+        src="images/my-portfolio.png"
+      />
+    </div>
+    <div
+      class="ikFeaturedSession__inner__content"
+      data-testid="featured-portfolio-content"
+    >
+      <p>
+        Use Google sheet as CMS for portfolio showcase
+      </p>
+      <p>
+        Welcome to mysite. This site is built with React and connect Google sheets via google-spreadsheet package. Styles are built at react-bootstrap barebone. Additionally, I upgrade the project using Typescript.
+      </p>
+      <p>
+        Next Step, I will create an admin panel to add new project data to write to google sheets
+      </p>
+    </div>
+  </div>
+</section>
+`;

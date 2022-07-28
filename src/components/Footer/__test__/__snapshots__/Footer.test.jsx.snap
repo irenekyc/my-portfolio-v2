@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Footer Section 1`] = `
+<footer
+  data-testid="footer"
+>
+  <p>
+     Design and built by Irene K
+  </p>
+</footer>
+`;

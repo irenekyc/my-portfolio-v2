@@ -13,6 +13,7 @@ it("Render Filter Bar", () => {
   expect(filterBarOptions).toHaveLength(9);
   const sortOptions = screen.getAllByTestId("sort-option");
   expect(sortOptions).toHaveLength(2);
+  expect(filterBarSection).toMatchSnapshot();
 });
 
 it("Render Filter Bar - sort by latest option should be default", () => {

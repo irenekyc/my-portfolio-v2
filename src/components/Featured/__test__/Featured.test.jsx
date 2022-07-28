@@ -14,4 +14,5 @@ it("Render Featured Section", () => {
     "featured-portfolio-content"
   );
   expect(featuredSectioncontent).toBeInTheDocument();
+  expect(featuredSection).toMatchSnapshot();
 });

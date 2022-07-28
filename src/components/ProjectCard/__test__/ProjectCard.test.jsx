@@ -25,4 +25,5 @@ it("Render ProjectCard - click on learn more button", () => {
   expect(learnMoreButton).toBeInTheDocument();
   fireEvent.click(learnMoreButton);
   expect(mockOpenModal).toBeCalledWith(mockProject);
+  expect(projectCard).toMatchSnapshot();
 });

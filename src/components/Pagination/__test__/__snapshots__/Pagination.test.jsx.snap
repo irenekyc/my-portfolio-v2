@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Pagination Section - click on prev and next button 1`] = `
+<div
+  class="ikPaginationBar"
+  data-testid="pagination"
+>
+  <button
+    class="ikPaginationBar__button ikPaginationBar__button__prev"
+    data-testid="pagination-prev"
+  >
+    Prev
+  </button>
+  <button
+    class="ikPaginationBar__button ikPaginationBar__button__next"
+    data-testid="pagination-next"
+  >
+    Next
+  </button>
+</div>
+`;

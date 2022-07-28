@@ -14,7 +14,7 @@ export const mockProjectListLong = [
   {
     title: "title1",
     category: "category",
-    tools: [],
+    tools: ["Next"],
     mainTag: [],
     image: "image.png",
     excerpt: "some excerpt",

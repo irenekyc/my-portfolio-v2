@@ -16,4 +16,5 @@ it("Render ModalMenu Section - show", () => {
   expect(modalMenu).toHaveClass("ikModalMenu__active");
   const contactDetails = screen.getAllByTestId("modal-menu-contact-list");
   expect(contactDetails).toHaveLength(4);
+  expect(modalMenu).toMatchSnapshot();
 });

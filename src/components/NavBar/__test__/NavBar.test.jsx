@@ -9,6 +9,7 @@ it("Render NavBar Section", () => {
   expect(navBar).toBeInTheDocument();
   const hamburgerBtn = screen.getByTestId("hamburger-btn");
   expect(hamburgerBtn).not.toHaveClass("ikNavBar__open");
+  expect(navBar).toMatchSnapshot();
 });
 
 it("Render NavBar Section - click on hamburger button", () => {

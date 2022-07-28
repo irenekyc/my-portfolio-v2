@@ -42,4 +42,5 @@ it("Render Pagination Section - click on prev and next button", () => {
   expect(mockGoToPrevPage).toBeCalled();
   fireEvent.click(nextButton);
   expect(mockGoToNextPage).toBeCalled();
+  expect(paginationBar).toMatchSnapshot();
 });

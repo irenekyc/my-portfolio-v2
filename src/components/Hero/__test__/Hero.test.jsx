@@ -11,4 +11,5 @@ it("Render Hero Section", () => {
   expect(heroCards[0]).toHaveTextContent("learning hours");
   expect(heroCards[1]).toHaveTextContent("coding hours");
   expect(heroCards[2]).toHaveTextContent("coding projects");
+  expect(hero).toMatchSnapshot();
 });

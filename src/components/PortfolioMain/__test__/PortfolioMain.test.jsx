@@ -41,4 +41,5 @@ it("Render PortfolioMain Section - number of portfolio card should be 9, and has
   expect(pagination).toBeInTheDocument();
   const nextButton = screen.getByTestId("pagination-next");
   expect(nextButton).toBeInTheDocument();
+  expect(portfolioMain).toMatchSnapshot();
 });

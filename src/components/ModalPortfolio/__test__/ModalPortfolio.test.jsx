@@ -38,6 +38,7 @@ it("Render ModalPortfolio Section - should show when show is true, and correctly
 
   const modalPortfolio = screen.queryByTestId("modal-portfolio");
   expect(modalPortfolio).toBeInTheDocument();
+  expect(modalPortfolio).toMatchSnapshot();
   const modalPortfolioTitle = screen.getByTestId("modal-portfolio-title");
   expect(modalPortfolioTitle).toHaveTextContent(mockProject.title);
   const modalPortfolioImage = screen.getByTestId("modal-portfolio-image");
@@ -58,5 +59,5 @@ it("Render ModalPortfolio Section - should show when show is true, and correctly
   );
   expect(modalPortfolioProjectUrl).toBeNull();
   const modalPrtoflioGithubUrl = screen.queryByTestId("modal-portfolio-github");
-  expect(modalPrtoflioGithubUrl).toHaveAttribute("href", mockProject.githu);
+  expect(modalPrtoflioGithubUrl).toHaveAttribute("href", mockProject.github);
 });
