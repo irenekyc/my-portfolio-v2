@@ -7,7 +7,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className={styles.ikNavBar}>
+      <nav className={styles.ikNavBar} data-testid="nav-bar">
         <div className={styles.ikNavBar__container}>
           <h2> Irene K. </h2>
           <div className={styles.ikNavBar__hamburger__div}>
@@ -16,6 +16,7 @@ const NavBar = () => {
               className={`${isOpen ? styles.ikNavBar__open : ""} ${
                 styles.ikNavBar__hamburger__button
               }`}
+              data-testid="hamburger-btn"
             >
               <input
                 type="checkbox"

@@ -8,10 +8,12 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "@types/google-spreadsheet": "^3.3.0",
+    "@types/jest": "^28.1.6",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/react-redux": "^7.1.24",
     "@types/react-transition-group": "^4.4.5",
+    "@types/redux-mock-store": "^1.0.3",
     "axios": "^0.19.2",
     "bootstrap": "^5.2.0",
     "classnames": "^2.3.1",
@@ -24,6 +26,7 @@
     "react-transition-group": "^4.4.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
+    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "sass": "^1.54.0",
     "typescript": "^3.9.10"
@@ -31,11 +34,30 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "CI=true react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 65,
+        "functions": 65,
+        "lines": 65,
+        "statements": 65
+      }
+    },
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/src/constants",
+      "<rootDir>/src/legacy-redux",
+      "<rootDir>/src/reportWebVitals.ts",
+      "index.ts",
+      "index.js",
+      "<rootDir>/src/helper/__test__/"
+    ]
   },
   "browserslist": {
     "production": [
@@ -48,5 +70,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "pre-commit": "test"
   }
 }

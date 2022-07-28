@@ -17,7 +17,7 @@ type CredentialType = {
   client_x509_cert_url: string | undefined;
 };
 
-const createCreds = (): CredentialType | undefined => {
+export const createCreds = (): CredentialType | undefined => {
   const reactPrivateKey: string | undefined = process.env
     .REACT_APP_GOOGLE_CREDENTIAL_PRIVATE_KEY as string;
   const privateKey: string = reactPrivateKey as string | "{privateKey: null}";

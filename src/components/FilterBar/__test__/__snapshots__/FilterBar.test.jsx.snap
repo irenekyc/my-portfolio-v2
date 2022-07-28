@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Filter Bar 1`] = `
+<section
+  class="ikFilterBar__container"
+  data-testid="filter-bar"
+  id="filter-bar"
+>
+  <div
+    class="ikFilterBar__inner"
+  >
+    <div
+      class="filter"
+    >
+      <span>
+         Filter by
+      </span>
+      <button
+        class=""
+        data-testid="filter-option"
+        id="Next"
+      >
+         
+        NextJs
+      </button>
+      <button
+        class=""
+        data-testid="filter-option"
+        id="JS"
+      >
+         
+        JS
+      </button>
+      <button
+        class=""
+        data-testid="filter-option"
+        id="API"
+      >
+         
+        API
+      </button>
+      <button
+        class=""
+        data-testid="filter-option"
+        id="React"
+      >
+         
+        React
+      </button>
+      <button
+        class=""
+        data-testid="filter-option"
+        id="MongoDB"
+      >
+         
+        MongoDB
+         
+      </button>
+      <button
+        class=""
+        data-testid="filter-option"
+        id="Solidity"
+      >
+         
+        Solidity
+         
+      </button>
+      <button
+        class=""
+        data-testid="filter-option"
+        id="Python"
+      >
+         
+        Python
+         
+      </button>
+      <button
+        class=""
+        data-testid="filter-option"
+        id="Webflow"
+      >
+         
+        Webflow
+         
+      </button>
+      <button
+        class=""
+        data-testid="filter-option"
+        id="Typescript"
+      >
+         
+        Typescript
+         
+      </button>
+      <button>
+         Clear
+      </button>
+    </div>
+    <div
+      class="sort"
+    >
+      <span>
+         Sort by
+      </span>
+      <button
+        class="ikFilterBar__button__active"
+        data-testid="sort-option"
+        id="desc"
+      >
+         
+        Latest
+      </button>
+      <button
+        class=""
+        data-testid="sort-option"
+        id="asc"
+      >
+         
+        Earliest
+      </button>
+    </div>
+  </div>
+</section>
+`;

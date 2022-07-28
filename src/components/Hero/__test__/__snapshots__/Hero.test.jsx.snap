@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Hero Section 1`] = `
+<section
+  class="ikHero__banner"
+  data-testid="hero"
+  id="hero"
+>
+  <div
+    class="ikHero__banner__inner"
+  >
+    <div
+      class="ikHero__banner__card ikHero__banner__card__learning"
+      data-testid="hero-card"
+      id="learning-hours"
+    >
+      <h3
+        class="leading"
+      >
+         300+
+      </h3>
+      <p>
+         learning hours
+      </p>
+    </div>
+    <div
+      class="ikHero__banner__card ikHero__banner__card__coding_hours"
+      data-testid="hero-card"
+      id="coding-hours"
+    >
+      <h3
+        class="leading"
+      >
+         5200+
+      </h3>
+      <p>
+         coding hours
+      </p>
+    </div>
+    <div
+      class="ikHero__banner__card ikHero__banner__card__projects"
+      data-testid="hero-card"
+      id="projects"
+    >
+      <h3
+        class="leading"
+      >
+         60+
+      </h3>
+      <p>
+         coding projects
+      </p>
+    </div>
+  </div>
+</section>
+`;

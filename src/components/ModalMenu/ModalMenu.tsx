@@ -13,9 +13,13 @@ const ModalMenu: FunctionComponent<ModalMenuProps> = ({
       className={`${styles.ikModalMenu__container} ${
         showMenu ? styles.ikModalMenu__active : ""
       }`}
+      data-testid="modal-menu"
     >
       <div className={styles.ikModalMenu}>
-        <div className={styles.ikModalMenu__about}>
+        <div
+          className={styles.ikModalMenu__about}
+          data-testid="modal-menu-about"
+        >
           <div className={styles.ikModalMenu__about__image}>
             <img
               src="images/profile-thumbnail-2.jpg"
@@ -27,7 +31,7 @@ const ModalMenu: FunctionComponent<ModalMenuProps> = ({
         </div>
         <div className={styles.ikModalMenu__contact}>
           <ul>
-            <li>
+            <li data-testid="modal-menu-contact-list">
               <a
                 href="https://irenekyc.github.io/irene-k/"
                 rel="noopener noreferrer"
@@ -37,7 +41,7 @@ const ModalMenu: FunctionComponent<ModalMenuProps> = ({
                 My Website
               </a>
             </li>
-            <li>
+            <li data-testid="modal-menu-contact-list">
               <a
                 href="https://github.com/irenekyc"
                 rel="noopener noreferrer"
@@ -48,7 +52,7 @@ const ModalMenu: FunctionComponent<ModalMenuProps> = ({
                 Github
               </a>
             </li>
-            <li>
+            <li data-testid="modal-menu-contact-list">
               <a
                 href="https://drive.google.com/file/d/10QU9exsCAFiL1P2sM-ljihuGE-cfCeIV/view?usp=sharing"
                 rel="noopener noreferrer"
@@ -59,7 +63,7 @@ const ModalMenu: FunctionComponent<ModalMenuProps> = ({
                 Resume
               </a>
             </li>
-            <li>
+            <li data-testid="modal-menu-contact-list">
               <a
                 href="https://www.linkedin.com/in/irene-chow-352662a8/"
                 rel="noopener noreferrer"

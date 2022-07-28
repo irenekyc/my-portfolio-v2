@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ModalMenu Section - show 1`] = `
+<section
+  class="ikModalMenu__container ikModalMenu__active"
+  data-testid="modal-menu"
+>
+  <div
+    class="ikModalMenu"
+  >
+    <div
+      class="ikModalMenu__about"
+      data-testid="modal-menu-about"
+    >
+      <div
+        class="ikModalMenu__about__image"
+      >
+        <img
+          alt="Irene K web developer"
+          src="images/profile-thumbnail-2.jpg"
+        />
+      </div>
+      <h2>
+         Irene K.
+      </h2>
+      <p>
+         Web Developer
+      </p>
+    </div>
+    <div
+      class="ikModalMenu__contact"
+    >
+      <ul>
+        <li
+          data-testid="modal-menu-contact-list"
+        >
+          <a
+            class="ikModalMenu__link"
+            href="https://irenekyc.github.io/irene-k/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            My Website
+          </a>
+        </li>
+        <li
+          data-testid="modal-menu-contact-list"
+        >
+          <a
+            class="ikModalMenu__link"
+            href="https://github.com/irenekyc"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+             
+            Github
+          </a>
+        </li>
+        <li
+          data-testid="modal-menu-contact-list"
+        >
+          <a
+            class="ikModalMenu__link"
+            href="https://drive.google.com/file/d/10QU9exsCAFiL1P2sM-ljihuGE-cfCeIV/view?usp=sharing"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+             
+            Resume
+          </a>
+        </li>
+        <li
+          data-testid="modal-menu-contact-list"
+        >
+          <a
+            class="ikModalMenu__link"
+            href="https://www.linkedin.com/in/irene-chow-352662a8/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+             
+            LinkedIn
+             
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+`;

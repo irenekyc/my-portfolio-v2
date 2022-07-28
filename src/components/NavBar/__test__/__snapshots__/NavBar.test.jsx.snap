@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render NavBar Section 1`] = `
+<nav
+  class="ikNavBar"
+  data-testid="nav-bar"
+>
+  <div
+    class="ikNavBar__container"
+  >
+    <h2>
+       Irene K. 
+    </h2>
+    <div
+      class="ikNavBar__hamburger__div"
+    >
+      <label
+        class=" ikNavBar__hamburger__button"
+        data-testid="hamburger-btn"
+        for="toggle-menu"
+      >
+        <input
+          id="toggle-menu"
+          type="checkbox"
+          value="open"
+        />
+        <div
+          class="ikNavBar__hamburger__button__line"
+        />
+        <div
+          class="ikNavBar__hamburger__button__line"
+        />
+        <div
+          class="ikNavBar__hamburger__button__line"
+        />
+      </label>
+    </div>
+  </div>
+</nav>
+`;

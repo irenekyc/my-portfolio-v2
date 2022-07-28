@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ProjectCard - click on learn more button 1`] = `
+<div
+  class="ikProjectCard__container fadeIn-enter fadeIn-enter-active"
+  data-testid="portfolio-project-card"
+>
+  <div
+    class="ikProjectCard__heading"
+  >
+    <div
+      class="ikProjectCard__heading__tags"
+    />
+    <div
+      class="ikProjectCard__heading__links"
+    >
+      <a
+        data-testid="project-card-github"
+        href="https://github.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <i
+          class="fab fa-github"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    class="ikProjectCard__title__div"
+  >
+    <h2
+      class="ikProjectCard__title"
+      data-testid="project-card-title"
+    >
+      title
+    </h2>
+  </div>
+  <div
+    class="ikProjectCard__image"
+  >
+    <img
+      alt=""
+      data-testid="project-card-image"
+      src="images/image.png"
+    />
+  </div>
+  <div
+    class="ikProjectCard__excerpt"
+    data-testid="project-card-excerpt"
+  >
+    <p>
+      some excerpt
+    </p>
+  </div>
+  <div>
+    <button
+      class="ikProjectCard__learnMore"
+      data-testid="project-card-learn-more"
+      id="title"
+    >
+       
+      Learn more
+    </button>
+  </div>
+</div>
+`;

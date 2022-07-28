@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ModalPortfolio Section - should show when show is true, and correctly render details 1`] = `
+<div
+  class="modal-dialog ikModal__dialog modal-xl"
+  data-testid="modal-portfolio"
+>
+  <div
+    class="modal-content ikModal__content"
+  >
+    <div
+      class="ikModal__header"
+    >
+      <h2
+        class="ikModal__title"
+        data-testid="modal-portfolio-title"
+      >
+        title
+      </h2>
+       
+      <button
+        aria-label="Close"
+        class="btn-close btn-close-white"
+        type="button"
+      />
+    </div>
+    <div
+      class="modal-body"
+    >
+      <div
+        class="ikModal__image"
+      >
+        <img
+          alt="title"
+          data-testid="modal-portfolio-image"
+          src="images/image.png"
+        />
+      </div>
+      <div
+        class="ikModal__descriptions"
+      >
+        <p
+          data-testid="modal-portfolio-excerpt"
+        >
+          some excerpt
+        </p>
+        <p
+          data-testid="modal-portfolio-description"
+        >
+          some description
+        </p>
+      </div>
+      <div
+        class="ikModal__tools"
+      >
+        <h4>
+           Tools & Libraries 
+        </h4>
+        <p />
+      </div>
+      <div
+        class="links"
+      >
+        <a
+          class="ikModal__button"
+          data-testid="modal-portfolio-github"
+          href="https://github.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <i
+            class="fab fa-github"
+          />
+           - Code
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
