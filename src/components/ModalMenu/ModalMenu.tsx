@@ -50,7 +50,7 @@ const ModalMenu: FunctionComponent<ModalMenuProps> = ({
             </li>
             <li>
               <a
-                href="https://google.com"
+                href="https://drive.google.com/file/d/10QU9exsCAFiL1P2sM-ljihuGE-cfCeIV/view?usp=sharing"
                 rel="noopener noreferrer"
                 target="_blank"
                 className={styles.ikModalMenu__link}
