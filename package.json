@@ -8,6 +8,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "@types/google-spreadsheet": "^3.3.0",
+    "@types/jest": "^28.1.6",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/react-redux": "^7.1.24",
@@ -36,6 +37,25 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
+      }
+    },
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/src/constants",
+      "<rootDir>/src/legacy-redux",
+      "<rootDir>/src/reportWebVitals.ts",
+      "index.ts",
+      "index.js",
+      "<rootDir>/src/helper/__test__/"
+    ]
   },
   "browserslist": {
     "production": [

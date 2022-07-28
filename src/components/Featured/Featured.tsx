@@ -3,7 +3,11 @@ import styles from "./Featured.module.scss";
 
 const Featured = () => {
   return (
-    <section className={styles.ikFeaturedSession} id="featured-section">
+    <section
+      className={styles.ikFeaturedSession}
+      id="featured-section"
+      data-testid="featured-portfolio"
+    >
       <div className={styles.ikFeaturedSession__inner}>
         <div className="featured-heading">
           <i className="fab fa-react"></i>
@@ -13,15 +17,25 @@ const Featured = () => {
             {" "}
             <span>FEATURED </span>
           </h5>
-          <h2 className={styles.ikFeaturedSession__inner__heading}>
+          <h2
+            className={styles.ikFeaturedSession__inner__heading}
+            data-testid="featured-portfolio-title"
+          >
             Portfolio Showcase V2
           </h2>
         </div>
 
         <div className={styles.ikFeaturedSession__inner__image}>
-          <img src="images/my-portfolio.png" alt="portfolio" />
+          <img
+            src="images/my-portfolio.png"
+            alt="portfolio"
+            data-testid="featured-portfolio-image"
+          />
         </div>
-        <div className={styles.ikFeaturedSession__inner__content}>
+        <div
+          className={styles.ikFeaturedSession__inner__content}
+          data-testid="featured-portfolio-content"
+        >
           <p>Use Google sheet as CMS for portfolio showcase</p>
           <p>
             Welcome to mysite. This site is built with React and connect Google

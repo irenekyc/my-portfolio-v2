@@ -43,7 +43,11 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
   };
 
   return (
-    <section className={styles.ikFilterBar__container} id="filter-bar">
+    <section
+      className={styles.ikFilterBar__container}
+      id="filter-bar"
+      data-testid="filter-bar"
+    >
       <div className={styles.ikFilterBar__inner}>
         <div className="filter">
           <span> Filter by</span>
@@ -53,6 +57,7 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
             }
             id={"Next"}
             onClick={onClickFilter}
+            data-testid="filter-option"
           >
             {" "}
             NextJs
@@ -63,6 +68,7 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
             }
             id={"JS"}
             onClick={onClickFilter}
+            data-testid="filter-option"
           >
             {" "}
             JS
@@ -73,6 +79,7 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
             }
             id="API"
             onClick={onClickFilter}
+            data-testid="filter-option"
           >
             {" "}
             API
@@ -83,6 +90,7 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
             }
             id="React"
             onClick={onClickFilter}
+            data-testid="filter-option"
           >
             {" "}
             React
@@ -93,6 +101,7 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
             }
             id="MongoDB"
             onClick={onClickFilter}
+            data-testid="filter-option"
           >
             {" "}
             MongoDB{" "}
@@ -103,6 +112,7 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
             }
             id="Solidity"
             onClick={onClickFilter}
+            data-testid="filter-option"
           >
             {" "}
             Solidity{" "}
@@ -113,6 +123,7 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
             }
             id="Python"
             onClick={onClickFilter}
+            data-testid="filter-option"
           >
             {" "}
             Python{" "}
@@ -123,6 +134,7 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
             }
             id="Webflow"
             onClick={onClickFilter}
+            data-testid="filter-option"
           >
             {" "}
             Webflow{" "}
@@ -133,6 +145,7 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
             }
             id="Typescript"
             onClick={onClickFilter}
+            data-testid="filter-option"
           >
             {" "}
             Typescript{" "}
@@ -148,6 +161,7 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
             }
             id="desc"
             onClick={onClickSort}
+            data-testid="sort-option"
           >
             {" "}
             Latest
@@ -156,6 +170,7 @@ const FilterBar: FunctionComponent<FilterBarProps> = ({
             className={sort === "asc" ? styles.ikFilterBar__button__active : ""}
             id="asc"
             onClick={onClickSort}
+            data-testid="sort-option"
           >
             {" "}
             Earliest

@@ -16,7 +16,7 @@ const Pagination: FunctionComponent<PagingationProps> = ({
   hasPrev,
 }: PagingationProps) => {
   return (
-    <div className={styles.ikPaginationBar}>
+    <div className={styles.ikPaginationBar} data-testid="pagination">
       {hasPrev && (
         <button
           onClick={goToPrevPage}
@@ -24,6 +24,7 @@ const Pagination: FunctionComponent<PagingationProps> = ({
             styles.ikPaginationBar__button,
             styles.ikPaginationBar__button__prev
           )}
+          data-testid="pagination-prev"
         >
           Prev
         </button>
@@ -35,6 +36,7 @@ const Pagination: FunctionComponent<PagingationProps> = ({
             styles.ikPaginationBar__button,
             styles.ikPaginationBar__button__next
           )}
+          data-testid="pagination-next"
         >
           Next
         </button>

@@ -25,7 +25,10 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({
 
   return (
     <CSSTransition in={ready} timeout={500} unmountOnExit classNames="fadeIn">
-      <div className={styles.ikProjectCard__container}>
+      <div
+        className={styles.ikProjectCard__container}
+        data-testid="portfolio-project-card"
+      >
         <div className={styles.ikProjectCard__heading}>
           <div className={styles.ikProjectCard__heading__tags}>
             {data.mainTag.map((tag) => (
@@ -38,25 +41,43 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({
                 href={data.projectUrl}
                 rel="noopener noreferrer"
                 target="_blank"
+                data-testid="project-card-project-url"
               >
                 <i className="fas fa-globe"></i>
               </a>
             )}
             {data.github && (
-              <a href={data.github} rel="noopener noreferrer" target="_blank">
+              <a
+                href={data.github}
+                rel="noopener noreferrer"
+                target="_blank"
+                data-testid="project-card-github"
+              >
                 <i className="fab fa-github"></i>
               </a>
             )}
           </div>
         </div>
         <div className={styles.ikProjectCard__title__div}>
-          <h2 className={styles.ikProjectCard__title}>{data.title}</h2>
+          <h2
+            className={styles.ikProjectCard__title}
+            data-testid="project-card-title"
+          >
+            {data.title}
+          </h2>
         </div>
 
         <div className={styles.ikProjectCard__image}>
-          <img src={`images/${data.image}`} alt="" />
+          <img
+            src={`images/${data.image}`}
+            alt=""
+            data-testid="project-card-image"
+          />
         </div>
-        <div className={styles.ikProjectCard__excerpt}>
+        <div
+          className={styles.ikProjectCard__excerpt}
+          data-testid="project-card-excerpt"
+        >
           <p>{data.excerpt}</p>
         </div>
         <div>
@@ -64,6 +85,7 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({
             className={styles.ikProjectCard__learnMore}
             onClick={() => onClickOpenDetails(data)}
             id={data.title}
+            data-testid="project-card-learn-more"
           >
             {" "}
             Learn more

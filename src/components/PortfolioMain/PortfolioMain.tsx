@@ -51,7 +51,7 @@ const PortfolioMain: FunctionComponent<PortfolioMainProps> = ({
 
   return (
     <>
-      <section className={styles.ikPortfolioMain}>
+      <section className={styles.ikPortfolioMain} data-testid="portfolio-main">
         <ModalPortfolio
           show={openDetailsModal !== null}
           projectDetails={openDetailsModal}
