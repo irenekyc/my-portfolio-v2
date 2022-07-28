@@ -34,9 +34,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "test": "CI=true react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -73,11 +72,6 @@
     ]
   },
   "devDependencies": {
-    "husky": "^8.0.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "CI=true npm run test"
-    }
+    "pre-commit": "test"
   }
 }
